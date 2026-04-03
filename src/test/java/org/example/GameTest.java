@@ -63,4 +63,10 @@ public class GameTest {
         assertThat(result.getStrikes()).isEqualTo(strikes);
         assertThat(result.getBalls()).isEqualTo(balls);
     }
+
+    @Test
+    void returnUnSolvedResultIfSomematchedNumber() {
+        generateQuestion("123");
+        assertMatchedNumber(game.guess("120"), false, 2, 0);
+    }
 }
