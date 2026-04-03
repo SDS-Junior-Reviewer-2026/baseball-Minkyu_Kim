@@ -27,7 +27,10 @@ public class GameTest {
     }
 
     @Test
-    public void 입력값이_없을_경우() {
+    void throwExceptionWhenInputLengthIsUnmatched() {
+        assertThrows(IllegalArgumentException.class, () -> {
+            game.guess("12");
+        });
     }
 
     /*
